@@ -90,18 +90,7 @@ main {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-}
-
-.panel {
-  display: none;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.panel.active {
-  display: block;
+  background-color: #e9ecef; /* Fondo gris claro para contraste */
 }
 
 /* ======== BOTONES ======== */
@@ -132,7 +121,13 @@ main {
   cursor: pointer;
 }
 
-
+/* ======== BLOQUES (ajuste visual) ======== */
+.card-large, .card-small {
+  background: #ffffff; /* Mantiene fondo blanco dentro del tablero */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
 
 
 /* ======== COLORES POR ROL ======== */
@@ -141,25 +136,24 @@ main {
 .admin-theme { background: #003366; }
 
 
-/* ======== PANEL DEL REDACTOR ======== */
+/* ======== PANEL DEL REDACTOR - ajustes estéticos ======== */
 .panel-header {
+  background-color: #00A19D;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #00A19D;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .user-info p {
-  margin: 0;
-  font-size: 0.9em;
-  color: #555;
+  color: #f9f9f9;
 }
 
 .datetime {
-  font-weight: bold;
-  color: #333;
+  color: #f9f9f9;
 }
 
 /* Grid principal del tablero */
@@ -222,4 +216,3 @@ main {
   justify-content: center;
   margin-top: 30px;
 }
-
