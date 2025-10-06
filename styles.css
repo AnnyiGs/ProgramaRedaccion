@@ -1,3 +1,14 @@
+/* Oculta todos los paneles por defecto */
+.panel {
+  display: none;
+}
+
+/* Solo se muestra el panel activo */
+.panel.active {
+  display: block;
+}
+
+
 /* ======== ESTILO GENERAL ======== */
 body {
   font-family: 'Poppins', sans-serif;
