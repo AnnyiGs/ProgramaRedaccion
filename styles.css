@@ -10,8 +10,11 @@
 
 /* Asegura que el dashboard esté oculto al inicio */
 .hidden {
-  display: none;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
+
 
 
 /* ======== ESTILO GENERAL ======== */
