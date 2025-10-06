@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red de Noticias - Sistema</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a2d9d6d6e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- LOGIN -->
+  <section id="login-section" class="active">
+    <div class="login-container">
+      <h1>Red de Noticias</h1>
+      <h3>Iniciar sesión</h3>
+      <input type="text" id="username" placeholder="Usuario">
+      <input type="password" id="password" placeholder="Contraseña">
+      <button id="login-btn">Entrar</button>
+      <p class="info">Usuarios de prueba:<br>
+        redactor / 1234<br>
+        supervisora / 1234<br>
+        admin / 1234
+      </p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD GENERAL -->
+  <div id="dashboard" class="hidden">
+    <aside id="sidebar">
+      <h2 id="role-title">Panel</h2>
+      <ul id="menu-list"></ul>
+      <button id="logout-btn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
+    </aside>
+
+    <main id="content">
+      <!-- PANEL REDACTOR -->
+      <section id="panel-redactor" class="panel">
+        <h2>Panel del Redactor</h2>
+        <p>Aquí puedes visualizar tus reportes enviados o crear uno nuevo.</p>
+        <button class="btn" id="new-report-btn"><i class="fa-solid fa-file-circle-plus"></i> Nuevo reporte</button>
+      </section>
+
+      <!-- FORMULARIO ENTREGA -->
+      <section id="formulario-entrega" class="panel">
+        <h2>Formulario de Entrega</h2>
+        <form>
+          <label>Título del Reporte:</label>
+          <input type="text" placeholder="Título del reporte">
+          <label>Descripción:</label>
+          <textarea placeholder="Detalles del reporte..."></textarea>
+          <label>Archivo adjunto:</label>
+          <input type="file">
+          <button type="button" class="btn">Enviar reporte</button>
+        </form>
+      </section>
+
+      <!-- PANEL SUPERVISORA -->
+      <section id="panel-supervisora" class="panel">
+        <h2>Panel de la Supervisora</h2>
+        <p>Aquí puedes revisar y aprobar o rechazar los reportes enviados.</p>
+        <div class="report-list">
+          <div class="report-item">
+            <p><strong>Reporte ejemplo:</strong> Cobertura de evento local</p>
+            <button class="btn-approve">Aprobar</button>
+            <button class="btn-reject">Rechazar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GESTIÓN DE USUARIOS -->
+      <section id="gestion-usuarios" class="panel">
+        <h2>Gestión de Usuarios</h2>
+        <p>Aquí puedes administrar las cuentas del sistema.</p>
+        <table>
+          <thead>
+            <tr><th>Usuario</th><th>Rol</th><th>Acciones</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>redactor</td><td>Redactor</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+            <tr><td>supervisora</td><td>Supervisora</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

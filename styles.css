@@ -1,0 +1,138 @@
+/* ======== ESTILO GENERAL ======== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+/* ======== LOGIN ======== */
+#login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #003366, #00A19D);
+}
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-container button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.info {
+  font-size: 0.8em;
+  color: #555;
+}
+
+/* ======== DASHBOARD ======== */
+#dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* ======== SIDEBAR ======== */
+#sidebar {
+  width: 230px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 1rem 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#sidebar li i {
+  margin-right: 10px;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ======== CONTENIDO ======== */
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.panel {
+  display: none;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.panel.active {
+  display: block;
+}
+
+/* ======== BOTONES ======== */
+.btn {
+  background: #00A19D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+/* ======== COLORES POR ROL ======== */
+.redactor-theme { background: #00A19D; }
+.supervisora-theme { background: #FF8C42; }
+.admin-theme { background: #003366; }
