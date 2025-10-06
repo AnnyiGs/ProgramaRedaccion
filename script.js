@@ -52,10 +52,7 @@ function mostrarPanelPorRol(rol) {
     case "redactor":
       colorClase = "redactor-theme";
       roleTitle.textContent = "Panel del Redactor";
-      crearMenu([
-        { id: "panel-redactor", icon: "fa-solid fa-newspaper", texto: "Mis Reportes" },
-        { id: "formulario-entrega", icon: "fa-solid fa-upload", texto: "Entregar Reporte" }
-      ]);
+      crearMenu([]);
       break;
 
     case "supervisora":
