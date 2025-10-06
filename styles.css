@@ -132,7 +132,94 @@ main {
   cursor: pointer;
 }
 
+
+
+
 /* ======== COLORES POR ROL ======== */
 .redactor-theme { background: #00A19D; }
 .supervisora-theme { background: #FF8C42; }
 .admin-theme { background: #003366; }
+
+
+/* ======== PANEL DEL REDACTOR ======== */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #00A19D;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.datetime {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Grid principal del tablero */
+.redactor-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* Bloques grandes */
+.card-large {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+/* Bloques pequeños */
+.card-small {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+/* Tablas dentro del tablero */
+.table-block {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-block th, .table-block td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-block th {
+  background-color: #00A19D;
+  color: #fff;
+}
+
+#notificaciones ul {
+  padding-left: 20px;
+}
+
+#notificaciones li {
+  margin-bottom: 5px;
+}
+
+/* Botón centrado */
+.new-report-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
