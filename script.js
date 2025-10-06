@@ -16,6 +16,12 @@ const roleTitle = document.getElementById("role-title");
 const sidebar = document.getElementById("sidebar");
 const menuList = document.getElementById("menu-list");
 
+// Asegura que solo se vea el login al inicio
+dashboard.classList.add("hidden");      // Oculta completamente el dashboard
+loginSection.style.display = "flex";    // Muestra el login
+roleTitle.textContent = "";             // Limpia el título del sidebar
+
+
 // Botones y entradas
 document.getElementById("login-btn").addEventListener("click", login);
 document.getElementById("logout-btn").addEventListener("click", logout);
@@ -43,7 +49,12 @@ function logout() {
   document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
   dashboard.classList.add("hidden");
   loginSection.style.display = "flex";
+
+  // Limpia el título y menú del sidebar
+  roleTitle.textContent = "";
+  menuList.innerHTML = "";
 }
+
 
 /* =============================
   CAMBIO DE PANEL SEGÚN ROL
