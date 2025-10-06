@@ -112,3 +112,16 @@ function mostrarPanel(id) {
    - Guardar cambios y formularios
    Por ahora, todo se simula en memoria.
 */
+
+/* ======== MOSTRAR FECHA Y HORA ACTUAL ======== */
+function actualizarFechaHora() {
+  const ahora = new Date();
+  const opciones = { 
+    year: "numeric", month: "2-digit", day: "2-digit", 
+    hour: "2-digit", minute: "2-digit", second: "2-digit" 
+  };
+  document.getElementById("current-datetime").textContent = ahora.toLocaleString("es-MX", opciones);
+}
+setInterval(actualizarFechaHora, 1000);
+actualizarFechaHora();
+
