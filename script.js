@@ -1,5 +1,5 @@
 /* =============================
-   SIMULACIÓN DE LOGIN Y ROLES
+  SIMULACIÓN DE LOGIN Y ROLES
    ============================= */
 
 // Datos simulados (en el futuro vendrán de la base de datos)
@@ -20,7 +20,9 @@ const menuList = document.getElementById("menu-list");
 document.getElementById("login-btn").addEventListener("click", login);
 document.getElementById("logout-btn").addEventListener("click", logout);
 
-// Función de inicio de sesión simulada
+/* =============================
+  FUNCIÓN DE LOGIN
+   ============================= */
 function login() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -33,27 +35,37 @@ function login() {
   }
 }
 
-// Cierra sesión y vuelve al login
+/* =============================
+  FUNCIÓN DE LOGOUT
+   ============================= */
 function logout() {
+  // Regresa al login y limpia vistas
+  document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
   dashboard.classList.add("hidden");
-  loginSection.classList.add("active");
   loginSection.style.display = "flex";
 }
 
-// Cambia el contenido y color según el rol
+/* =============================
+  CAMBIO DE PANEL SEGÚN ROL
+   ============================= */
 function mostrarPanelPorRol(rol) {
   // Oculta login
-  dashboard.classList.remove("hidden");
   loginSection.style.display = "none";
-  
+  dashboard.classList.remove("hidden");
 
-  // Configura color y nombre del panel
+  // Oculta todos los paneles antes de mostrar el del rol
+  document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+
+  // Variables de control
   let colorClase = "";
+  let panelId = "";
+
   switch (rol) {
     case "redactor":
       colorClase = "redactor-theme";
       roleTitle.textContent = "Panel del Redactor";
-      crearMenu([]);
+      crearMenu([]); // El redactor no tiene botones de menú
+      panelId = "panel-redactor";
       break;
 
     case "supervisora":
@@ -62,6 +74,7 @@ function mostrarPanelPorRol(rol) {
       crearMenu([
         { id: "panel-supervisora", icon: "fa-solid fa-check-to-slot", texto: "Aprobar Reportes" }
       ]);
+      panelId = "panel-supervisora";
       break;
 
     case "admin":
@@ -70,20 +83,21 @@ function mostrarPanelPorRol(rol) {
       crearMenu([
         { id: "gestion-usuarios", icon: "fa-solid fa-users-gear", texto: "Usuarios" }
       ]);
+      panelId = "gestion-usuarios";
       break;
   }
 
   // Cambia color del sidebar
   sidebar.className = colorClase;
 
-  // Muestra el primer panel del menú
-  const primerPanel = document.querySelector(`#${menuList.firstChild.dataset.id}`);
-  mostrarPanel(primerPanel.id);
+  // Muestra el panel correspondiente al rol
+  const panelMostrar = document.getElementById(panelId);
+  if (panelMostrar) panelMostrar.classList.add("active");
 }
 
 /* =============================
-   NAVEGACIÓN DE PANELES
-   ============================= */
+  CREACIÓN DE MENÚ LATERAL
+  ============================= */
 function crearMenu(items) {
   menuList.innerHTML = "";
   items.forEach(item => {
@@ -95,31 +109,26 @@ function crearMenu(items) {
   });
 }
 
-// Muestra el panel seleccionado
+/* =============================
+  MOSTRAR PANELES (GENÉRICO)
+   ============================= */
 function mostrarPanel(id) {
   document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
+  const panel = document.getElementById(id);
+  if (panel) panel.classList.add("active");
 }
 
 /* =============================
-   FUTURA CONEXIÓN CON BD
-   =============================
-   En esta sección se podrían agregar funciones para:
-   - Validar usuarios contra la base de datos
-   - Cargar reportes o usuarios reales
-   - Guardar cambios y formularios
-   Por ahora, todo se simula en memoria.
-*/
-
-/* ======== MOSTRAR FECHA Y HORA ACTUAL ======== */
+  MOSTRAR FECHA Y HORA ACTUAL
+   ============================= */
 function actualizarFechaHora() {
   const ahora = new Date();
   const opciones = { 
     year: "numeric", month: "2-digit", day: "2-digit", 
     hour: "2-digit", minute: "2-digit", second: "2-digit" 
   };
-  document.getElementById("current-datetime").textContent = ahora.toLocaleString("es-MX", opciones);
+  const fechaHora = document.getElementById("current-datetime");
+  if (fechaHora) fechaHora.textContent = ahora.toLocaleString("es-MX", opciones);
 }
 setInterval(actualizarFechaHora, 1000);
 actualizarFechaHora();
-
