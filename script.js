@@ -43,8 +43,9 @@ function logout() {
 // Cambia el contenido y color según el rol
 function mostrarPanelPorRol(rol) {
   // Oculta login
-  loginSection.style.display = "none";
   dashboard.classList.remove("hidden");
+  loginSection.style.display = "none";
+  
 
   // Configura color y nombre del panel
   let colorClase = "";

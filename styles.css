@@ -3,9 +3,14 @@
   display: none;
 }
 
-/* Solo se muestra el panel activo */
+/* Solo el panel activo es visible */
 .panel.active {
   display: block;
+}
+
+/* Asegura que el dashboard esté oculto al inicio */
+.hidden {
+  display: none;
 }
 
 
