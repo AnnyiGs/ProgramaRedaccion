@@ -16,22 +16,41 @@ const roleTitle = document.getElementById("role-title");
 const sidebar = document.getElementById("sidebar");
 const menuList = document.getElementById("menu-list");
 
+// Campos y botones de login
+const userInput = document.getElementById("username");
+const passInput = document.getElementById("password");
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const togglePassword = document.getElementById("togglePassword"); // 👁️ botón mostrar contraseña
+
 // Asegura que solo se vea el login al inicio
-dashboard.classList.add("hidden");      // Oculta completamente el dashboard
-loginSection.style.display = "flex";    // Muestra el login
-roleTitle.textContent = "";             // Limpia el título del sidebar
+dashboard.classList.add("hidden");
+loginSection.style.display = "flex";
+roleTitle.textContent = "";
 
+/* =============================
+  EVENTOS DE BOTONES
+   ============================= */
+loginBtn.addEventListener("click", login);
+logoutBtn.addEventListener("click", logout);
 
-// Botones y entradas
-document.getElementById("login-btn").addEventListener("click", login);
-document.getElementById("logout-btn").addEventListener("click", logout);
+/* =============================
+  MOSTRAR / OCULTAR CONTRASEÑA
+   ============================= */
+if (togglePassword) {
+  togglePassword.addEventListener("click", () => {
+    const isPassword = passInput.type === "password";
+    passInput.type = isPassword ? "text" : "password";
+    togglePassword.textContent = isPassword ? "🙈" : "👁️";
+  });
+}
 
 /* =============================
   FUNCIÓN DE LOGIN
    ============================= */
 function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const username = userInput.value.trim();
+  const password = passInput.value.trim();
 
   if (usuarios[username] && usuarios[username].password === password) {
     const rol = usuarios[username].rol;
@@ -53,8 +72,31 @@ function logout() {
   // Limpia el título y menú del sidebar
   roleTitle.textContent = "";
   menuList.innerHTML = "";
+
+  // 🔹 Limpia los campos del login
+  userInput.value = "";
+  passInput.value = "";
+  passInput.type = "password"; // volver a ocultar contraseña
 }
 
+/* =============================
+  TECLA ENTER EN CAMPOS DE LOGIN
+   ============================= */
+// Si está en el usuario y presiona Enter → pasa al campo contraseña
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    passInput.focus();
+  }
+});
+
+// Si está en contraseña y presiona Enter → ejecuta el login
+passInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    loginBtn.click();
+  }
+});
 
 /* =============================
   CAMBIO DE PANEL SEGÚN ROL
