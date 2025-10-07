@@ -43,11 +43,3 @@ Si quieres recargar estilos/JS y no ves los cambios, haz un hard refresh (Ctrl+F
 - Añadir pruebas unitarias y/o tests end-to-end si el proyecto crece.
 - Mejorar accesibilidad (focus management, `aria-hidden` en el dashboard mientras el login está visible).
 
-## Contribuir
-Si quieres contribuir, crea un fork y envía un pull request con una descripción clara del cambio. Para cambios de UI, incluye capturas o un pequeño video.
-
-## Licencia
-Este proyecto es de ejemplo/demostración. Añade aquí la licencia que prefieras (MIT, Apache, etc.) si vas a compartirlo públicamente.
-
----
-Si quieres, puedo: añadir un backdrop más oscuro, cerrar el login con Esc, o preparar un pequeño script que simule un backend para autenticar con fetch; dime qué prefieres y lo implemento.
