@@ -33,13 +33,5 @@ Si quieres recargar estilos/JS y no ves los cambios, haz un hard refresh (Ctrl+F
 - `styles.css` — Estilos: el `#login-section` se hizo overlay (position: fixed) para que no se muestre el contenido de fondo antes del login.
 - `script.js` — Lógica de login, control de roles y visibilidad de paneles. Contiene las credenciales de prueba.
 
-## Notas sobre el comportamiento del login
-- Antes: el panel del redactor estaba marcado como visible por defecto (`class="active"`) y por eso se veía aunque aún no se hubiera iniciado sesión.
-- Cambios recientes: se quitó la clase `active` por defecto del `panel-redactor` y se implementó que el login sea un overlay fijo. Además, `script.js` maneja `document.body.style.overflow` para evitar scroll del fondo mientras el login está activo.
 
-## Siguientes pasos sugeridos
-- Mover la autenticación a un backend real y no mantener credenciales en el front-end.
-- Añadir validaciones más robustas y mensajes de error en el formulario.
-- Añadir pruebas unitarias y/o tests end-to-end si el proyecto crece.
-- Mejorar accesibilidad (focus management, `aria-hidden` en el dashboard mientras el login está visible).
 
