@@ -1,6 +1,6 @@
-# ProgramaRedaccion
+# Orbit
 
-Bienvenido al proyecto ProgramaRedaccion — una interfaz sencilla de tablero para una red de noticias que incluye un formulario de login y paneles por rol (Redactor, Supervisora, Admin).
+Bienvenido al proyecto Orbit — una interfaz sencilla de tablero para una red de noticias que incluye un formulario de login y paneles por rol (Redactor, Supervisora, Admin).
 
 Este repositorio contiene una maqueta front-end (HTML/CSS/JS) pensada para probar la lógica de inicio de sesión y la visualización de diferentes paneles según el rol del usuario.
 
