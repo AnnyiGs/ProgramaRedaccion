@@ -1,1 +1,1 @@
-Aun no hay informacion sobre el readme 
+# Sistema de Administración 
